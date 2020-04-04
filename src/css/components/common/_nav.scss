@@ -1,0 +1,36 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background-color: $nav-bg-color;
+  z-index: 2000;
+  padding: 0px 10px;
+
+  @include flex-main(column, space-evenly, center) &__name {
+    @include font($secondary-font, 24px, 400, $main-text-color);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  @include media-q($tablet) {
+    height: 80px;
+    @include flex-main(row, space-evenly, center);
+    padding: 0px 0px;
+  }
+  &__item-name {
+    @include font($base-font, 14px, 300, $main-text-color);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    &:hover {
+      border-bottom: 2px solid white;
+    }
+  }
+  &__list {
+    @include flex-main;
+    text-align: center;
+  }
+  &__item:not(:last-of-type) {
+    margin-right: 44px;
+  }
+}

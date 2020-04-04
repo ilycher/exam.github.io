@@ -1,0 +1,52 @@
+.card {
+  @include flex-main(column);
+  width: 100%;
+  height: auto;
+  background-color: $icon-box-bg-color;
+  @include media-q($tablet) {
+    @include flex-main;
+    height: 60%;
+  }
+  @include media-q($desktop-small) {
+    width: 1110px;
+    height: 297px;
+    @include flex-main;
+  }
+  &__image {
+    width: 300px;
+    @include padding-hack(53.8%, none);
+    @include media-q($tablet) {
+      width: 1000px;
+      @include padding-hack(16.8%, none);
+    }
+    @include media-q($desktop-small) {
+      width: 445px;
+      @include padding-hack(26.8%, none);
+    }
+  }
+
+  &__content {
+    width: auto;
+    padding: 0px 10px;
+    @include media-q($desktop-small) {
+      width: 665px;
+      padding: 0px 50px;
+    }
+  }
+  &__name {
+    @include font($secondary-font, 20px, 300, $content-box-text-color);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+  }
+  &__text {
+    @include font($secondary-font, 16px, 300, $content-box-text-color);
+    line-height: 25px;
+    word-spacing: 3px;
+  }
+  &__item {
+    display: block;
+    font-size: 3rem;
+    color: $btn-bg-color;
+    float: left;
+  }
+}

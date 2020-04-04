@@ -1,0 +1,25 @@
+.form {
+  @include flex-main(column, flex-start, center);
+  @include media-q($tablet) {
+    @include flex-main(row, flex-start, flex-start);
+  }
+  &__input {
+    width: 300px;
+    height: 60px;
+    padding-left: 10px;
+    border: 1px solid white;
+
+    @include media-q($tablet) {
+      width: 500px;
+      padding-left: 115px;
+    }
+    &:focus {
+      border: 4px solid $btn-bg-color;
+    }
+
+    &::placeholder {
+      @include font($secondary-font, 14px, 300, $input-text-color);
+      letter-spacing: 2px;
+    }
+  }
+}

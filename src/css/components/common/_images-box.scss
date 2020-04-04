@@ -1,0 +1,49 @@
+.images-box {
+  width: 300px;
+  height: 683px;
+  @include flex-main(column, flex-start, center);
+  padding-top: 10px;
+  @include media-q($desktop-small) {
+    width: 541px;
+  }
+  @include media-q($desktop-small) {
+    width: 541px;
+    height: 683px;
+    @include flex-main(column, flex-start, flex-end);
+    padding-top: 120px;
+  }
+  &__image {
+    width: 300px;
+    @include media-q($phablet) {
+      width: 500px;
+    }
+    @include media-q($desktop-small) {
+      width: 351px;
+    }
+
+    &:first-of-type {
+      margin-right: 0px;
+      margin-bottom: 30px;
+      @include padding-hack(70%, none);
+
+      @include media-q($phablet) {
+        @include padding-hack(120%, none);
+      }
+      @include media-q($desktop-small) {
+        margin-right: 125px;
+        margin-bottom: 5px;
+        @include padding-hack(43%, none);
+      }
+    }
+    &:last-of-type {
+      @include padding-hack(63%, none);
+
+      @include media-q($phablet) {
+        @include padding-hack(100%, none);
+      }
+      @include media-q($desktop-small) {
+        @include padding-hack(37%, none);
+      }
+    }
+  }
+}

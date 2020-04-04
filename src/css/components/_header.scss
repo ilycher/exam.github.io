@@ -1,0 +1,45 @@
+.header {
+  height: 100vh;
+  background-image: url(../images/header.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0 10px;
+
+  &__title {
+    @include font($secondary-font, 48px, 400, $main-text-color);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 4px;
+  }
+  &__text {
+    @include font($secondary-font, 22px, 100, $main-text-color);
+    letter-spacing: 4.5px;
+    word-spacing: 6px;
+    margin-bottom: 49px;
+  }
+  &__form {
+    margin-bottom: 120px;
+  }
+  &__scroll-name {
+    @extend .form__input::placeholder;
+    margin-bottom: 5px;
+  }
+  &__scroll {
+    @include flex-main(column, center, center);
+  }
+
+  &__scroll:hover &__scroll-name {
+    color: white;
+    transform: scale(1.2);
+  }
+  &__scroll:hover &__scroll-icon {
+    color: white;
+    transform: scale(1.2);
+  }
+
+  &__container {
+    height: 100vh;
+    @include flex-main(column);
+  }
+}
